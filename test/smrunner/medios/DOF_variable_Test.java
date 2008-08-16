@@ -1,0 +1,55 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package smrunner.medios;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import smrunner.SMRunner;
+import smrunner.utils.Edible;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author santi
+ */
+public class DOF_variable_Test {
+
+    public DOF_variable_Test() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+
+    @Before
+    public void setUp() {
+    }
+
+    @After
+    public void tearDown() {
+    }
+
+
+    @Test
+    public void test1()
+    {
+        System.out.println("DOF's");
+        String[] prueba = { "test/smrunner/medios/html/DOF_variable1.xhtml",
+                            "test/smrunner/medios/html/DOF_variable2.xhtml"};
+        SMRunner rr = new SMRunner(prueba);
+        Edible w = rr.process();
+        System.out.println(w);
+        assertEquals("&VARIABLE;",w.toString());
+    }
+
+}
